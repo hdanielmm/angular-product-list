@@ -18,5 +18,15 @@
     "price": 8.9,
     "starRating": 4.8,
     "imageUrl": "assets/images/hammer.png"
+  },
+  {
+    "productId": 3.7,
+    "productName": "Video game controller",
+    "productCode": "GMG-0042",
+    "releaseDate": "October 15, 2018",
+    "description": "Black carbon fiber material",
+    "price": 35.95,
+    "starRating": 4.8,
+    "imageUrl": "assets/images/xbox-controller.png"
   }
 ]
