@@ -7,14 +7,13 @@ import { ProductService } from './product.service';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css'],
 })
-
 export class ProductListComponent implements OnInit {
   pageTitle: string = 'Product List';
   imageWidth: number = 50;
   imageMargin: number = 2;
   showImage: boolean = false;
   errorMessage: string;
-  
+
   _listFilter: string;
 
   get listFilter(): string {
@@ -23,24 +22,26 @@ export class ProductListComponent implements OnInit {
 
   set listFilter(value: string) {
     this._listFilter = value;
-    this.filteredProducts = this.listFilter ? this.performFilter(this.listFilter) : this.products;
+    this.filteredProducts = this.listFilter
+      ? this.performFilter(this.listFilter)
+      : this.products;
   }
 
   filteredProducts: IProduct[];
-
   products: IProduct[] = [];
 
-  constructor(private productService: ProductService) {
-  }
+  constructor(private productService: ProductService) {}
 
   onRatingClicked(message: string): void {
-    this.pageTitle = 'Product List: ' + message; 
+    this.pageTitle = 'Product List: ' + message;
   }
 
   performFilter(filterBy: string): IProduct[] {
     filterBy = filterBy.toLocaleLowerCase();
-    return this.products.filter((product: IProduct) =>
-      product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1);
+    return this.products.filter(
+      (product: IProduct) =>
+        product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1
+    );
   }
 
   toggleImage(): void {
@@ -49,12 +50,11 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit(): void {
     this.productService.getProducts().subscribe({
-      next: products => {
+      next: (products) => {
         this.products = products;
         this.filteredProducts = this.products;
       },
-      error: err => this.errorMessage = err
+      error: (err) => (this.errorMessage = err),
     });
-    
   }
 }
