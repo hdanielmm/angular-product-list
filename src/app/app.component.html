@@ -1,23 +1,10 @@
-<h1 class="container bg-dark text-white my-4 py-4">NgIf show = {{ show }}</h1>
-
+<nav class="navbar navbar-expand navbar-light bg-light">
+  <a class="navbar-brand">{{pageTitle}}</a>
+  <ul class="nav nav-pills">
+    <li><a class="nav-link" [routerLink]="['/welcome']">Home</a></li>
+    <li><a class="nav-link" [routerLink]="['/products']">Product List</a></li>
+  </ul>
+</nav>
 <div class="container">
-  <button class="btn btn-info" (click)="show=!show" *ngIf="show; else showDanger">
-    Show danger
-  </button>
-  <ng-template #showDanger>
-    <button class="btn btn-warning" (click)="show=!show">
-      Show info
-    </button>
-  </ng-template>
-  <p class="text-info" *ngIf="show; else showDos">
-    lorem ipsum
-  </p>
-  <ng-template #showDos>
-    <p class="text-danger">
-      lorem ipsum 2
-    </p>
-  </ng-template>
+  <router-outlet></router-outlet>
 </div>
-
-<div><h1>{{ title }}</h1></div>
-<pm-products></pm-products>
