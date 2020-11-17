@@ -4,11 +4,13 @@ import { ProductDetailComponent } from './product-detail.component';
 import { RouterModule } from '@angular/router';
 import { ProductDetailGuard } from './product-detail.guard';
 import { SharedModule } from '../shared/shared.module';
+import { ProductEditComponent } from './product-edit/product-edit.component';
 
 @NgModule({
   declarations: [
     ProductListComponent,
     ProductDetailComponent,
+    ProductEditComponent,
   ],
   imports: [
     RouterModule.forChild([

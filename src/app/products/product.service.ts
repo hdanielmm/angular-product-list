@@ -27,7 +27,6 @@ export class ProductService {
   //   if(id === 0) {
   //     return of(this.initializeProduct())
   //   }
-  //   debugger;
   //   const url = `${this.productsUrl}/${id}`;
   //   return this.http.get<IProduct>(url)
   //     .pipe(
@@ -37,6 +36,7 @@ export class ProductService {
   // }
 
   getProduct(id: number): Observable<IProduct> {
+    console.log(`${this.productsUrl}/${id}`);
     return this.getProducts()
       .pipe(
         map((products: IProduct[]) => products.find(p => p.productId === id))
@@ -54,16 +54,16 @@ export class ProductService {
     return throwError(errorMessage);
   }
 
-  private initializeProduct(): IProduct {
-    return {
-      productId: 0,
-      productName: null,
-      productCode: null,
-      releaseDate: null,
-      price: null,
-      description: null,
-      starRating: null,
-      imageUrl: null
-    }
-  }
+  // private initializeProduct(): IProduct {
+  //   return {
+  //     productId: 0,
+  //     productName: null,
+  //     productCode: null,
+  //     releaseDate: null,
+  //     price: null,
+  //     description: null,
+  //     starRating: null,
+  //     imageUrl: null
+  //   }
+  // }
 }
