@@ -10,7 +10,7 @@ import { ProductService } from './product.service';
   styleUrls: ['./product-detail.component.css'],
 })
 export class ProductDetailComponent implements OnInit {
-  pageTitle: string = 'Product Detail';
+  pageTitle = 'Product Detail';
   errorMessage = '';
   product: IProduct | undefined;
 

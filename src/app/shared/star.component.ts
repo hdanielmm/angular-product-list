@@ -9,7 +9,7 @@ import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core
 export class StarComponent implements OnChanges {
   starWidth: number;
 
-  @Input() 
+  @Input()
   rating: number;
 
   @Output()
