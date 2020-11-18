@@ -17,7 +17,8 @@
     "description": "Curved claw steel hammer",
     "price": 8.9,
     "starRating": 4.8,
-    "imageUrl": "assets/images/hammer.png"
+    "imageUrl": "assets/images/hammer.png",
+    "tags": ["tools", "hammer", "construction"]
   },
   {
     "productId": 3,
